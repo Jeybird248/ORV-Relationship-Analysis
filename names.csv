@@ -1,135 +1,125 @@
 index,character,aliases
 0,Abaddon,N/A
 1,Abyssal Black Flame Dragon,N/A
-2,Bureau,N/A
-3,Agares,N/A
-4,Aileen Makerfield,N/A
-5,Anna Croft,N/A
-6,Antinus,N/A
-7,Aphrodite,N/A
-8,Apocalypse Dragon,N/A
-9,Ariadne,N/A
-10,Asmodeus,N/A
-11,Asuka Ren,N/A
-12,Bang Cheolsoo,N/A
-13,Baram,N/A
-14,Bihyung,N/A
-15,Camael,N/A
-16,Cha Sangkyung,N/A
-17,Cheok Jungyeong,N/A
-18,Cheon Inho,N/A
-19,Cho Youngran,N/A
-20,Chu Wangin,N/A
-21,Constellation,N/A
-22,Defense Master,N/A
-23,Demon King,N/A
-24,Deputy Yoon,N/A
-25,Dionysus,N/A
-26,Dokgak,N/A
-27,Dokkaebi,N/A
-28,Dokkaebi King,N/A
-29,Duke Syswitz,N/A
-30,Eater of Dreams,N/A
-31,Fourth Wall,N/A
-32,Gabriel,N/A
-33,Gong Pildu,N/A
-34,"Great Sage, Heaven's Equal",N/A
-35,Gu Daesung,N/A
-36,Gwanchang,N/A
-37,Gwanghaegun of Joseon,N/A
-38,Gyebaek,N/A
-39,Gyeon Hwon,N/A
-40,Hades,N/A
-41,Han Donghoon,N/A
-42,Han Myungoh,N/A
-43,Han Sooyoung,"The First Apostle, The Fake King"
-44,Heavenly Wind God,N/A
-45,Heo Jun,N/A
-46,Hwang Sungmin,N/A
-47,Incarnation,N/A
-48,Indra,N/A
-49,Iris Vladimirovna Rebezova,N/A
-50,Jang Hayoung,N/A
-51,Jeon Ildo,N/A
-52,Jeon Woochi,N/A
-53,Ji Eunyu,N/A
-54,Jophiel,N/A
-55,Jung Heewon,Erich Striker
-56,Jung Minseob,N/A
-57,Jung Youngho,N/A
-58,Kaizenix,N/A
-59,Kang Ilhun,N/A
-60,Kim Baekho,N/A
-61,Kim Dokja,"Ahjussi, Subway Grasshopper, Ugly Squid, Kim Dojega, Representative-nim, The Immortal King, The King of No Killing, The King of the World Without A King"
-62,Kim Namwoon,N/A
-63,Kim Namwoon (999th round),N/A
-64,Kim Yongpal,N/A
-65,Kim Yushin,N/A
-66,Kizuki Hiroshi,N/A
-67,Kyrgios Rodgraim,N/A
-68,Lame Trickster,N/A
-69,Lee Boksoon,N/A
-70,Lee Eokgi,N/A
-71,Lee Gilyoung,N/A
-72,Lee Hakhyun,N/A
-73,Lee Hyunsung,Bilston Framer
-74,Lee Hyunsung (999th round),N/A
-75,Lee Jihye,N/A
-76,Lee Jihye (999th round),N/A
-77,Lee Seolhwa,N/A
-78,Lee Sookyung,N/A
-79,Lee Sungkook,N/A
-80,Lee Youngmi,N/A
-81,Loki,N/A
-82,Lycaon Isparang,N/A
-83,Ma Kangcheol,N/A
-84,Mark Javier,N/A
-85,Marquis Ombros,N/A
-86,Mass Production Maker,N/A
-87,Master of Steel,N/A
-88,Metatron,N/A
-89,Michael,N/A
-90,Min Jiwon,N/A
-91,Myung Ilsang,N/A
-92,Na Bori,N/A
-93,Namgung Minyoung,N/A
-94,Nation's Independence Activist,N/A
-95,Nirvana Moebius,N/A
-96,Oldest Dream,N/A
-97,One who Overcomes the Late Trials,N/A
-98,Outer God,N/A
-99,Paul,N/A
-100,Persephone,N/A
-101,Poseidon,N/A
-102,Probability,N/A
-103,Queen Jinseong,N/A
-104,Raguel,N/A
-105,Raphael,N/A
-106,Reinheit von Djerba,N/A
-107,Sakyamuni,N/A
-108,Secretive Plotter,N/A
-109,Selena Kim,N/A
-110,Shin Yooin,N/A
-111,Shin Yoosung,Tang Sanzang
-112,Shin Yoosung (41st round),N/A
-113,Simulation,N/A
-114,Song Minwoo,N/A
-115,Sovereign of Eight Heads,N/A
-116,Surya,N/A
-117,Suzuki Tatsuya,N/A
-118,The Prophets,N/A
-119,Tls123,N/A
-120,Twelve Apostles,N/A
-121,Underworld,N/A
-122,Ungnyeo,N/A
-123,Uriel,N/A
-124,Yamamoto Hajime,N/A
-125,Yi Sunsin,N/A
-126,Yoo Hyunho,N/A
-127,Yoo Joonghyuk,"Sunfish bastard, Master, Captain, The Punisher, Puppet of the Oldest Dream"
-128,Yoo Mia,N/A
-129,Yoo Sangah,Moonlight Empress
-130,Yoon Kiyoung,N/A
-131,Youngki,N/A
-132,Yujeong Samyeongdang,N/A
-133,Zeus,N/A
+2,Agares,N/A
+3,Aileen Makerfield,N/A
+4,Anna Croft,N/A
+5,Antinus,N/A
+6,Aphrodite,N/A
+7,Apocalypse Dragon,N/A
+8,Ariadne,N/A
+9,Asmodeus,N/A
+10,Asuka Ren,N/A
+11,Bang Cheolsoo,N/A
+12,Baram,N/A
+13,Bihyung,N/A
+14,Camael,N/A
+15,Cha Sangkyung,N/A
+16,Cheok Jungyeong,N/A
+17,Cheon Inho,N/A
+18,Cho Youngran,N/A
+19,Chu Wangin,N/A
+20,Defense Master,N/A
+21,Deputy Yoon,N/A
+22,Dionysus,N/A
+23,Dokgak,N/A
+24,Dokkaebi,N/A
+25,Dokkaebi King,N/A
+26,Duke Syswitz,N/A
+27,Eater of Dreams,N/A
+28,Fourth Wall,N/A
+29,Gabriel,N/A
+30,Gong Pildu,N/A
+31,Great Sage,Heaven's Equal
+32,Gu Daesung,N/A
+33,Gwanchang,N/A
+34,Gwanghaegun of Joseon,N/A
+35,Gyebaek,N/A
+36,Gyeon Hwon,N/A
+37,Hades,N/A
+38,Han Donghoon,N/A
+39,Han Myungoh,N/A
+40,Han Sooyoung,"The First Apostle, The Fake King"
+41,Heavenly Wind God,N/A
+42,Heo Jun,N/A
+43,Hwang Sungmin,N/A
+44,Indra,N/A
+45,Iris Vladimirovna Rebezova,N/A
+46,Jang Hayoung,N/A
+47,Jeon Ildo,N/A
+48,Jeon Woochi,N/A
+49,Ji Eunyu,N/A
+50,Jophiel,N/A
+51,Jung Heewon,Erich Striker
+52,Jung Minseob,N/A
+53,Jung Youngho,N/A
+54,Kaizenix,N/A
+55,Kang Ilhun,N/A
+56,Kim Baekho,N/A
+57,Kim Dokja,"Ahjussi, Subway Grasshopper, Ugly Squid, Kim Dojega, Representative-nim, The Immortal King, The King of No Killing, The King of the World Without A King"
+58,Kim Namwoon,N/A
+59,Kim Namwoon (999th round),N/A
+60,Kim Yongpal,N/A
+61,Kim Yushin,N/A
+62,Kizuki Hiroshi,N/A
+63,Kyrgios Rodgraim,N/A
+64,Lame Trickster,N/A
+65,Lee Boksoon,N/A
+66,Lee Eokgi,N/A
+67,Lee Gilyoung,N/A
+68,Lee Hakhyun,N/A
+69,Lee Hyunsung,Bilston Framer
+70,Lee Hyunsung (999th round),N/A
+71,Lee Jihye,N/A
+72,Lee Jihye (999th round),N/A
+73,Lee Seolhwa,N/A
+74,Lee Sookyung,N/A
+75,Lee Sungkook,N/A
+76,Lee Youngmi,N/A
+77,Loki,N/A
+78,Lycaon Isparang,N/A
+79,Ma Kangcheol,N/A
+80,Mark Javier,N/A
+81,Marquis Ombros,N/A
+82,Mass Production Maker,N/A
+83,Master of Steel,N/A
+84,Metatron,N/A
+85,Michael,N/A
+86,Min Jiwon,N/A
+87,Myung Ilsang,N/A
+88,Na Bori,N/A
+89,Namgung Minyoung,N/A
+90,Nation's Independence Activist,N/A
+91,Nirvana Moebius,N/A
+92,Oldest Dream,N/A
+93,One who Overcomes the Late Trials,N/A
+94,Paul,N/A
+95,Persephone,N/A
+96,Poseidon,N/A
+97,Queen Jinseong,N/A
+98,Raguel,N/A
+99,Raphael,N/A
+100,Reinheit von Djerba,N/A
+101,Sakyamuni,N/A
+102,Secretive Plotter,N/A
+103,Selena Kim,N/A
+104,Shin Yooin,N/A
+105,Shin Yoosung,Tang Sanzang
+106,Shin Yoosung (41st round),N/A
+107,Song Minwoo,N/A
+108,Sovereign of Eight Heads,N/A
+109,Surya,N/A
+110,Suzuki Tatsuya,N/A
+111,tls123,N/A
+112,Ungnyeo,N/A
+113,Uriel,N/A
+114,Yamamoto Hajime,N/A
+115,Yi Sunsin,N/A
+116,Yoo Hyunho,N/A
+117,Yoo Joonghyuk,"Sunfish bastard, Master, Captain, The Punisher, Puppet of the Oldest Dream"
+118,Yoo Mia,N/A
+119,Yoo Sangah,Moonlight Empress
+120,Yoon Kiyoung,N/A
+121,Youngki,N/A
+122,Yujeong Samyeongdang,N/A
+123,Zeus,N/A
