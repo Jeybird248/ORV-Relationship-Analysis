@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 1000px;
+                 height: 700px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"betweenness_centrality": 0.0063974972705131425, "closeness_centrality": 0.5714285714285714, "degree_centrality": 0.3571428571428571, "font": {"color": "white"}, "group": 0, "id": "Dokja", "label": "Dokja", "shape": "dot", "size": 10}, {"betweenness_centrality": 0.09602334761064923, "closeness_centrality": 0.6363636363636364, "degree_centrality": 0.5, "font": {"color": "white"}, "group": 0, "id": "Sangah", "label": "Sangah", "shape": "dot", "size": 14}, {"betweenness_centrality": 0.040115058369026624, "closeness_centrality": 0.6511627906976745, "degree_centrality": 0.5, "font": {"color": "white"}, "group": 0, "id": "Hyunsung", "label": "Hyunsung", "shape": "dot", "size": 14}, {"betweenness_centrality": 0.13685857058872927, "closeness_centrality": 0.717948717948718, "degree_centrality": 0.6071428571428571, "font": {"color": "white"}, "group": 1, "id": "Joonghyuk", "label": "Joonghyuk", "shape": "dot", "size": 17}, {"betweenness_centrality": 0.05055272108843538, "closeness_centrality": 0.5833333333333334, "degree_centrality": 0.42857142857142855, "font": {"color": "white"}, "group": 3, "id": "One", "label": "One", "shape": "dot", "size": 12}, {"betweenness_centrality": 0.05514455782312925, "closeness_centrality": 0.5490196078431373, "degree_centrality": 0.39285714285714285, "font": {"color": "white"}, "group": 3, "id": "Han", "label": "Han", "shape": "dot", "size": 11}, {"betweenness_centrality": 0.19127404048038968, "closeness_centrality": 0.7368421052631579, "degree_centrality": 0.6428571428571428, "font": {"color": "white"}, "group": 1, "id": "Jun", "label": "Jun", "shape": "dot", "size": 18}, {"betweenness_centrality": 0.0076058201058201045, "closeness_centrality": 0.5714285714285714, "degree_centrality": 0.3571428571428571, "font": {"color": "white"}, "group": 0, "id": "Pildu", "label": "Pildu", "shape": "dot", "size": 10}, {"betweenness_centrality": 0.09028827580414879, "closeness_centrality": 0.6511627906976745, "degree_centrality": 0.5, "font": {"color": "white"}, "group": 3, "id": "Gilyoung", "label": "Gilyoung", "shape": "dot", "size": 14}, {"betweenness_centrality": 0.2251291257243638, "closeness_centrality": 0.6222222222222222, "degree_centrality": 0.5, "font": {"color": "white"}, "group": 2, "id": "Jihye", "label": "Jihye", "shape": "dot", "size": 14}, {"betweenness_centrality": 0.0024875073486184595, "closeness_centrality": 0.5384615384615384, "degree_centrality": 0.2857142857142857, "font": {"color": "white"}, "group": 0, "id": "Ilhun", "label": "Ilhun", "shape": "dot", "size": 8}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.39436619718309857, "degree_centrality": 0.03571428571428571, "font": {"color": "white"}, "group": 0, "id": "Kang", "label": "Kang", "shape": "dot", "size": 1}, {"betweenness_centrality": 0.0052479633828840175, "closeness_centrality": 0.5490196078431373, "degree_centrality": 0.2857142857142857, "font": {"color": "white"}, "group": 0, "id": "Namwoon", "label": "Namwoon", "shape": "dot", "size": 8}, {"betweenness_centrality": 0.008597883597883597, "closeness_centrality": 0.49122807017543857, "degree_centrality": 0.17857142857142855, "font": {"color": "white"}, "group": 1, "id": "Inho", "label": "Inho", "shape": "dot", "size": 5}, {"betweenness_centrality": 0.07470972957084067, "closeness_centrality": 0.5490196078431373, "degree_centrality": 0.3214285714285714, "font": {"color": "white"}, "group": 3, "id": "Bihyung", "label": "Bihyung", "shape": "dot", "size": 9}, {"betweenness_centrality": 0.07142857142857142, "closeness_centrality": 0.5185185185185185, "degree_centrality": 0.25, "font": {"color": "white"}, "group": 3, "id": "Sungkook", "label": "Sungkook", "shape": "dot", "size": 7}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.3888888888888889, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 3, "id": "Trickster", "label": "Trickster", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.42424242424242425, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 3, "id": "Asmodeus", "label": "Asmodeus", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.45901639344262296, "degree_centrality": 0.10714285714285714, "font": {"color": "white"}, "group": 1, "id": "Yoo", "label": "Yoo", "shape": "dot", "size": 3}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.49122807017543857, "degree_centrality": 0.14285714285714285, "font": {"color": "white"}, "group": 2, "id": "Ahjussi", "label": "Ahjussi", "shape": "dot", "size": 4}, {"betweenness_centrality": 0.06031116150163768, "closeness_centrality": 0.5, "degree_centrality": 0.17857142857142855, "font": {"color": "white"}, "group": 1, "id": "Wall", "label": "Wall", "shape": "dot", "size": 5}, {"betweenness_centrality": 0.0027336860670194, "closeness_centrality": 0.45161290322580644, "degree_centrality": 0.10714285714285714, "font": {"color": "white"}, "group": 1, "id": "Cheolsoo", "label": "Cheolsoo", "shape": "dot", "size": 3}, {"betweenness_centrality": 0.001984126984126984, "closeness_centrality": 0.345679012345679, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 1, "id": "Anna", "label": "Anna", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.358974358974359, "degree_centrality": 0.03571428571428571, "font": {"color": "white"}, "group": 3, "id": "Dokgak", "label": "Dokgak", "shape": "dot", "size": 1}, {"betweenness_centrality": 0.015967498110355253, "closeness_centrality": 0.4444444444444444, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 1, "id": "Croft", "label": "Croft", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.39436619718309857, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 2, "id": "Eokgi", "label": "Eokgi", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.39436619718309857, "degree_centrality": 0.07142857142857142, "font": {"color": "white"}, "group": 2, "id": "Sunsin", "label": "Sunsin", "shape": "dot", "size": 2}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.3888888888888889, "degree_centrality": 0.03571428571428571, "font": {"color": "white"}, "group": 2, "id": "Lee", "label": "Lee", "shape": "dot", "size": 1}, {"betweenness_centrality": 0.0, "closeness_centrality": 0.345679012345679, "degree_centrality": 0.03571428571428571, "font": {"color": "white"}, "group": 3, "id": "Donghoon", "label": "Donghoon", "shape": "dot", "size": 1}]);
+                  edges = new vis.DataSet([{"from": "Dokja", "to": "Sangah", "value": 4, "width": 1}, {"from": "Dokja", "to": "Hyunsung", "value": 6, "width": 1}, {"from": "Dokja", "to": "Joonghyuk", "value": 10, "width": 1}, {"from": "Dokja", "to": "One", "value": 1, "width": 1}, {"from": "Dokja", "to": "Han", "value": 9, "width": 1}, {"from": "Dokja", "to": "Jun", "value": 4, "width": 1}, {"from": "Dokja", "to": "Pildu", "value": 3, "width": 1}, {"from": "Dokja", "to": "Gilyoung", "value": 4, "width": 1}, {"from": "Dokja", "to": "Jihye", "value": 1, "width": 1}, {"from": "Dokja", "to": "Ilhun", "value": 5, "width": 1}, {"from": "Sangah", "to": "Kang", "value": 5, "width": 1}, {"from": "Sangah", "to": "Hyunsung", "value": 99, "width": 1}, {"from": "Sangah", "to": "Namwoon", "value": 3, "width": 1}, {"from": "Sangah", "to": "Gilyoung", "value": 80, "width": 1}, {"from": "Sangah", "to": "Han", "value": 46, "width": 1}, {"from": "Sangah", "to": "One", "value": 10, "width": 1}, {"from": "Sangah", "to": "Jun", "value": 136, "width": 1}, {"from": "Sangah", "to": "Joonghyuk", "value": 19, "width": 1}, {"from": "Sangah", "to": "Inho", "value": 3, "width": 1}, {"from": "Sangah", "to": "Jihye", "value": 14, "width": 1}, {"from": "Sangah", "to": "Bihyung", "value": 3, "width": 1}, {"from": "Sangah", "to": "Pildu", "value": 16, "width": 1}, {"from": "Sangah", "to": "Ilhun", "value": 34, "width": 1}, {"from": "Hyunsung", "to": "Namwoon", "value": 17, "width": 1}, {"from": "Hyunsung", "to": "Han", "value": 47, "width": 1}, {"from": "Hyunsung", "to": "Gilyoung", "value": 49, "width": 1}, {"from": "Hyunsung", "to": "One", "value": 20, "width": 1}, {"from": "Hyunsung", "to": "Joonghyuk", "value": 31, "width": 1}, {"from": "Hyunsung", "to": "Inho", "value": 12, "width": 1}, {"from": "Hyunsung", "to": "Jun", "value": 123, "width": 1}, {"from": "Hyunsung", "to": "Pildu", "value": 27, "width": 1}, {"from": "Hyunsung", "to": "Jihye", "value": 7, "width": 1}, {"from": "Hyunsung", "to": "Bihyung", "value": 3, "width": 1}, {"from": "Hyunsung", "to": "Ilhun", "value": 1, "width": 1}, {"from": "Hyunsung", "to": "Sungkook", "value": 8, "width": 1}, {"from": "Namwoon", "to": "Han", "value": 24, "width": 1}, {"from": "Namwoon", "to": "One", "value": 5, "width": 1}, {"from": "Namwoon", "to": "Joonghyuk", "value": 8, "width": 1}, {"from": "Namwoon", "to": "Pildu", "value": 1, "width": 1}, {"from": "Namwoon", "to": "Jihye", "value": 5, "width": 1}, {"from": "Namwoon", "to": "Jun", "value": 5, "width": 1}, {"from": "Han", "to": "One", "value": 15, "width": 1}, {"from": "Han", "to": "Trickster", "value": 5, "width": 1}, {"from": "Han", "to": "Inho", "value": 8, "width": 1}, {"from": "Han", "to": "Gilyoung", "value": 13, "width": 1}, {"from": "Han", "to": "Joonghyuk", "value": 1, "width": 1}, {"from": "Han", "to": "Jun", "value": 3, "width": 1}, {"from": "Han", "to": "Asmodeus", "value": 19, "width": 1}, {"from": "One", "to": "Trickster", "value": 5, "width": 1}, {"from": "One", "to": "Joonghyuk", "value": 13, "width": 1}, {"from": "One", "to": "Bihyung", "value": 11, "width": 1}, {"from": "One", "to": "Jun", "value": 18, "width": 1}, {"from": "One", "to": "Gilyoung", "value": 7, "width": 1}, {"from": "One", "to": "Ilhun", "value": 1, "width": 1}, {"from": "One", "to": "Sungkook", "value": 1, "width": 1}, {"from": "Gilyoung", "to": "Jun", "value": 90, "width": 1}, {"from": "Gilyoung", "to": "Yoo", "value": 4, "width": 1}, {"from": "Gilyoung", "to": "Asmodeus", "value": 3, "width": 1}, {"from": "Gilyoung", "to": "Pildu", "value": 1, "width": 1}, {"from": "Gilyoung", "to": "Joonghyuk", "value": 35, "width": 1}, {"from": "Gilyoung", "to": "Bihyung", "value": 7, "width": 1}, {"from": "Gilyoung", "to": "Jihye", "value": 62, "width": 1}, {"from": "Gilyoung", "to": "Ahjussi", "value": 4, "width": 1}, {"from": "Gilyoung", "to": "Sungkook", "value": 2, "width": 1}, {"from": "Joonghyuk", "to": "Wall", "value": 15, "width": 1}, {"from": "Joonghyuk", "to": "Bihyung", "value": 11, "width": 1}, {"from": "Joonghyuk", "to": "Cheolsoo", "value": 1, "width": 1}, {"from": "Joonghyuk", "to": "Jun", "value": 88, "width": 1}, {"from": "Joonghyuk", "to": "Jihye", "value": 129, "width": 1}, {"from": "Joonghyuk", "to": "Yoo", "value": 12, "width": 1}, {"from": "Joonghyuk", "to": "Pildu", "value": 29, "width": 1}, {"from": "Joonghyuk", "to": "Ahjussi", "value": 10, "width": 1}, {"from": "Joonghyuk", "to": "Ilhun", "value": 7, "width": 1}, {"from": "Joonghyuk", "to": "Sungkook", "value": 59, "width": 1}, {"from": "Wall", "to": "Cheolsoo", "value": 8, "width": 1}, {"from": "Wall", "to": "Anna", "value": 8, "width": 1}, {"from": "Wall", "to": "Jun", "value": 6, "width": 1}, {"from": "Wall", "to": "Jihye", "value": 3, "width": 1}, {"from": "Bihyung", "to": "Dokgak", "value": 2, "width": 1}, {"from": "Bihyung", "to": "Jun", "value": 12, "width": 1}, {"from": "Bihyung", "to": "Pildu", "value": 10, "width": 1}, {"from": "Bihyung", "to": "Sungkook", "value": 2, "width": 1}, {"from": "Cheolsoo", "to": "Inho", "value": 13, "width": 1}, {"from": "Inho", "to": "Jun", "value": 16, "width": 1}, {"from": "Jun", "to": "Jihye", "value": 80, "width": 1}, {"from": "Jun", "to": "Pildu", "value": 5, "width": 1}, {"from": "Jun", "to": "Yoo", "value": 3, "width": 1}, {"from": "Jun", "to": "Ahjussi", "value": 9, "width": 1}, {"from": "Jun", "to": "Croft", "value": 2, "width": 1}, {"from": "Jun", "to": "Ilhun", "value": 17, "width": 1}, {"from": "Jun", "to": "Sungkook", "value": 12, "width": 1}, {"from": "Jihye", "to": "Ahjussi", "value": 21, "width": 1}, {"from": "Jihye", "to": "Pildu", "value": 11, "width": 1}, {"from": "Jihye", "to": "Eokgi", "value": 5, "width": 1}, {"from": "Jihye", "to": "Sunsin", "value": 6, "width": 1}, {"from": "Jihye", "to": "Lee", "value": 1, "width": 1}, {"from": "Jihye", "to": "Ilhun", "value": 2, "width": 1}, {"from": "Pildu", "to": "Ilhun", "value": 2, "width": 1}, {"from": "Anna", "to": "Croft", "value": 4, "width": 1}, {"from": "Eokgi", "to": "Sunsin", "value": 4, "width": 1}, {"from": "Sungkook", "to": "Donghoon", "value": 8, "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
